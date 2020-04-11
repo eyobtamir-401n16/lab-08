@@ -13,18 +13,8 @@ const CatModel = new Model(catSchema);
  * @route GET /categories
  * @returns {object} 200 -This route show data from categories object
  */
-router.get('/api/v1/products', (req, res, next) => {
-  res.send('Hello form the the route')
-});
 
-/**
- * Categories GET route
- * @group Categories
- * @route GET /categories
- * @returns {object} 200 -This route show data from categories object
- */
-
-router.get('/api/v1/categories', async(req, res, next) => {
+router.get('/categories', async(req, res, next) => {
   let results = await CatModel.readByQuery({});
   console.log('results', results)
   res.send(results);
@@ -37,7 +27,7 @@ router.get('/api/v1/categories', async(req, res, next) => {
  * @returns {object} 200 -This route create data inside categories object
  */
 
-router.post('/api/v1/categories', async(req, res, next) => {
+router.post('/categories', async(req, res, next) => {
   let record = await CatModel.create(req.body);
   res.send(record);
 });
@@ -49,7 +39,7 @@ router.post('/api/v1/categories', async(req, res, next) => {
  * @returns {object} 200 -This route update data in categories object
  */
 
-router.put('/api/v1/categories/:_id', async (req, res, next) => {
+router.put('/categories/:_id', async (req, res, next) => {
   let record = await CatModel.update(req.params._id);
   res.send(record);
 });
@@ -61,7 +51,7 @@ router.put('/api/v1/categories/:_id', async (req, res, next) => {
  * @returns {object} 200 -This route delete data in categories object
  */
 
-router.delete('/api/v1/categories/:_id', async (req, res, next) => {
+router.delete('/categories/:_id', async (req, res, next) => {
   let record = await CatModel.delete (req.params._id)
 });
 

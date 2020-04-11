@@ -14,7 +14,7 @@ const ProModel = new Model(proSchema);
  * @returns {object} 200 -This route show data from products object
  */
 
-router.get('/api/v1/products', async (req, res, next) => {
+router.get('/products', async (req, res, next) => {
   let results = await ProModel.readByQuery({});
   res.send(results)
 });
@@ -26,7 +26,7 @@ router.get('/api/v1/products', async (req, res, next) => {
  * @returns {object} 200 -This route show data from products object
  */
 
-router.get('/api/v1/products/:_id', async (req, res, next) => {
+router.get('/products/:_id', async (req, res, next) => {
   let record = await ProModel.read(req.params._id);
   res.send(record);
 });
@@ -38,7 +38,7 @@ router.get('/api/v1/products/:_id', async (req, res, next) => {
  * @returns {object} 200 -This route create data inside products object
  */
 
-router.post('/api/v1/products', async (req, res, next) => {
+router.post('/products', async (req, res, next) => {
   let record = await ProModel.create(req.body)
 
   res.send(record);
@@ -51,9 +51,10 @@ router.post('/api/v1/products', async (req, res, next) => {
  * @returns {object} 201 -This route update data in products object
  */
 
-router.put('/api/v1/products/:_id', async (req, res, next) => {
-  let record = await ProModel.update(req.params._id)
-  console.log('update', update)
+router.put('/products/:_id', async (req, res, next) => {
+  console.log('rec', req.body)
+  let record = await ProModel.update(req.params._id, req.body)
+  console.log('update', record)
   res.send(record);
 });
 
@@ -64,7 +65,7 @@ router.put('/api/v1/products/:_id', async (req, res, next) => {
  * @returns {object} 200 -This route delete data in products object
  */
 
-router.delete('/api/v1/products/:_id', async (req, res, next) => {
+router.delete('/products/:_id', async (req, res, next) => {
   let record = await ProModel.delete(req.params._id);
   console.log('delete in product routes', record);
   res.send(record)
