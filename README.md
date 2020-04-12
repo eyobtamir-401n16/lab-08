@@ -10,15 +10,22 @@
 * http//:localhosts:3000/api/v1/products  - for products page * 
 * http//:localhosts:3000/api/v1/categories  - for categoris page *
 
-### Heroku Link
-*  *
+### Heroku Link Home Page
+*https://lab-express-mongodb.herokuapp.com/*
 
-### Swagger Link
-*  *
+### Heroku Link Proucts Page
+*https://lab-express-mongodb.herokuapp.com/api/v1/products*
+
+### Heroku Link home Page
+*https://lab-express-mongodb.herokuapp.com/api/v1/categories*
+
+### Swagger on Heroku Link
+*https://lab-express-mongodb.herokuapp.com/api-docs*
 
 ### Setup
-* .env requirements (where applicable)
-i.e.
+* .env requirements *
+ * For MONGO_URI *
+ * PORT * 
 
 ### PORT - Port Number
     PORT-3000
